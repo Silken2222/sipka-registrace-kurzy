@@ -1,0 +1,49 @@
+
+Výjimky v projektu Šipka – registrace do kurzů
+===============================================
+
+Při návrhu projektu je důležité počítat s různými výjimkami, které mohou během běhu programu nastat.
+Pomocí konstrukce try-except je možné tyto výjimky zachytit a program nezastaví svůj běh, ale informuje uživatele.
+
+Příklady situací a možných výjimek
+----------------------------------
+
+1. Čtení/zápis do souboru CSV
+   - FileNotFoundError – soubor neexistuje
+   - PermissionError – nelze zapsat, není oprávnění
+   - IOError – obecná chyba při práci se soubory
+
+2. Uživatelský vstup (např. zadání věku)
+   - ValueError – zadání textu místo čísla
+   - TypeError – typová chyba při nevhodném převodu
+
+3. Registrace účastníka do kurzu
+   - Pokud je kurz plný, může být vyvolána vlastní výjimka, např. PlnaKapacitaError
+
+Použití bloků try-except
+-------------------------
+- try: místo, kde může výjimka nastat
+- except: zachytí chybu a provede náhradní kód (např. výpis chyby)
+- else: provede se, pokud nenastane žádná výjimka
+- finally: vždy se provede, bez ohledu na výjimku
+
+Příklad:
+--------
+try:
+    vek = int(input("Zadej věk účastníka: "))
+except ValueError:
+    print("Neplatný vstup. Věk musí být číslo.")
+
+Vlastní výjimky
+---------------
+Pro specifické situace je možné vytvořit vlastní výjimky pomocí klíčového slova `class` a `raise`.
+
+Příklad:
+--------
+class PlnaKapacitaError(Exception):
+    pass
+
+Závěr
+-----
+Zachytávání výjimek je důležité pro stabilitu programu.
+Umožňuje lépe pracovat s chybami a předejít nečekanému ukončení aplikace.
