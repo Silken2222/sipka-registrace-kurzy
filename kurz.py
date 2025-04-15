@@ -16,3 +16,6 @@ class Kurz:
     def zobraz_info(self):
         return (f"Kurz: {self.nazev}, instruktor: {self.instruktor}, "
                 f"kapacita: {len(self.ucastnici)}/{self.kapacita}")
+
+
+

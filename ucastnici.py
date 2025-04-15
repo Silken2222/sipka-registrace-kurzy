@@ -32,3 +32,5 @@ class DospelyUcastnik(Ucastnik):
     def zobraz_info(self):
         return (f"{self.typ_kurzu.title()}: {self.jmeno}, {self.vek} let, "
                 f"Tel: {self.telefon}, Email: {self.email}")
+
+
