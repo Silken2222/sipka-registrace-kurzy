@@ -1,0 +1,33 @@
+
+Výjimky v projektu Šipka – registrace do kurzů
+===============================================
+
+
+Příklady situací a možných výjimek
+----------------------------------
+
+1. Uživatelský vstup (např. zadání věku)
+   - ValueError – zadání textu místo čísla
+   - TypeError – typová chyba při nevhodném převodu
+
+2. Registrace účastníka do kurzu
+   - Pokud je kurz plný, může být vyvolána vlastní výjimka, např. PlnaKapacitaError
+
+
+Příklad:
+--------
+try:
+    vek = int(input("Zadej věk účastníka: "))
+except ValueError:
+    print("Neplatný vstup. Věk musí být číslo.")
+
+Vlastní výjimky
+---------------
+Pro specifické situace je možné vytvořit vlastní výjimky pomocí klíčového slova `class` a `raise`.
+
+Příklad:
+--------
+class PlnaKapacitaError(Exception):
+    pass
+
+
